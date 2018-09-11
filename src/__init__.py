@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from .web import WebProvider
+from .regex import RegexProvider
 
 __all__ = [
-    'WebProvider'
+    'RegexProvider'
 ]

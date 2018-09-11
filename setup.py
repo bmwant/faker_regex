@@ -6,9 +6,9 @@ import io
 from setuptools import setup
 
 here = os.path.abspath(os.path.dirname(__file__))
-README = io.open(os.path.join(here, 'README.rst'), encoding="utf8").read()
+README = io.open(os.path.join(here, 'README.md'), encoding="utf8").read()
 
-version = '0.3.1-dev'
+version = '0.0.1-dev'
 
 # this module can be zip-safe if the zipimporter implements iter_modules or if
 # pkgutil.iter_importer_modules has registered a dispatch for the zipimporter.
@@ -21,7 +21,7 @@ except (ImportError, AttributeError):
     zip_safe = False
 
 setup(
-    name='faker_web',
+    name='faker_regex',
     version=version,
     description="Web-related Provider for the Faker Python package.",
     long_description=README,
@@ -44,13 +44,13 @@ setup(
         'Topic :: Utilities',
         'License :: OSI Approved :: Apache Software License'
     ],
-    keywords='faker web test data',
-    author='thiagofigueiro',
-    author_email='thiagocsf+fakerweb@gmail.com',
-    url='https://github.com/thiagofigueiro/faker_web',
+    keywords='faker regex test data pattern',
+    author='Misha Behersky',
+    author_email='',
+    url='',
     license='Apache License, Version 2.0',
-    package_dir={'faker_web': 'src/web'},
-    packages=['faker_web'],
+    package_dir={'faker_regex': 'src/regex'},
+    packages=['faker_regex'],
     platforms=['any'],
     test_suite='pytest',
     zip_safe=zip_safe,
