@@ -1,9 +1,8 @@
-faker_web
-=========
+## faker_regex
 
  |pypi| |unix_build| |coverage| |license|
 
-faker_web is a provider for the `Faker`_ Python package.
+faker_regex is a provider for the `Faker`_ Python package.
 
 It provides web-related fake data for testing purposes:
 
@@ -11,8 +10,7 @@ It provides web-related fake data for testing purposes:
    * Popular web server version tokens/signatures.
 
 
-Usage
------
+### Usage
 
 Install with pip:
 
@@ -44,6 +42,13 @@ Add the ``WebProvider`` to your ``Faker`` instance:
     fake.server_token()
     # Apache/2.0.51 (Ubuntu)
 
+
+### Developing
+```
+$ mkvirtualenv -p python3 faker_regex
+$ pip install -e .[dev]
+$ pytest -sv tests
+```
 
 .. |pypi| image:: https://img.shields.io/pypi/v/faker_web.svg?style=flat-square&label=version
     :target: https://pypi.python.org/pypi/faker_web

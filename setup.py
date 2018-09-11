@@ -20,10 +20,20 @@ try:
 except (ImportError, AttributeError):
     zip_safe = False
 
+
+tests_require = [
+    'pytest',
+    'pytest-cov',
+    'pytest-flakes',
+    'pytest-pep8',
+]
+
+release_require = []
+
 setup(
     name='faker_regex',
     version=version,
-    description="Web-related Provider for the Faker Python package.",
+    description='Regex-related Provider for the Faker Python package.',
     long_description=README,
     classifiers=[
         # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
@@ -57,13 +67,12 @@ setup(
     setup_requires=[
         'pytest-runner'
     ],
-    tests_require=[
-        'pytest',
-        'pytest-cov',
-        'pytest-flakes',
-        'pytest-pep8',
-    ],
+    tests_require=tests_require,
     install_requires=[
         'faker',
     ],
+    extras_require={
+        'test': tests_require,
+        'dev': tests_require + release_require,
+    },
 )

@@ -1,7 +1,16 @@
 # -*- coding: utf-8 -*-
 from faker.providers import BaseProvider
 
-from .mimetypes import mime_types
+from .generators import (
+    w_generator,
+    d_generator,
+)
+
+
+MAPPING = {
+    r'\w': w_generator,
+    r'\d': d_generator,
+}
 
 
 class RegexProvider(BaseProvider):
@@ -16,14 +25,13 @@ class RegexProvider(BaseProvider):
 
     def regex(self, pattern):
         """
-        Returns a mime-type from the list of types understood by the Apache
-        http server.
-        >>> pattern =
-        >>> fake.regex()
-        application/mxf
+        Returns a .
+        >>> pattern = r'\w\w\wo\d'
+        >>> fake.regex(pattern)
+        helo2
 
-        :return: content-type
+        :return: string that fits pattern
         :rtype: str
         """
-        return self.random_element(self.all_mime_types.keys())
+        return ''
 
